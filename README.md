@@ -8,7 +8,7 @@ Build a plot, create an ornament, add special effects (moire, pulsation).
 Example:  
 ![Polar rose](https://github.com/evgenijaZ/CG-labs/blob/docs/docs/lab2.JPG)  
 ## [Lab 3](https://github.com/evgenijaZ/CG-labs/tree/master/src/main/java/edu/kpi/cg/lab3)  
-Build an 3D plot  
+Build an 3D plot  ![torus equation](https://github.com/evgenijaZ/CG-labs/blob/docs/docs/torus_equation.gif)  
 Example:  
 ![Torus](https://github.com/evgenijaZ/CG-labs/blob/docs/docs/lab3.JPG)  
  
