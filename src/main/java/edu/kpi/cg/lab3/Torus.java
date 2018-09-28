@@ -19,29 +19,28 @@ public class Torus extends AbstractAnalysis {
 
     @Override
     public void init() {
-        final int size = 500;
+        Coord3d[] points = getCoordinates(5, 3, 500, 0, 2 * PI, -PI, PI);
+        Scatter scatter = new Scatter(points, Color.BLUE);
+        chart = AWTChartComponentFactory.chart(Quality.Advanced, "newt");
+        chart.getScene().add(scatter);
+    }
+
+    Coord3d[] getCoordinates(double R, double r, int size, int phiFloor, double phiCell, double thetaFloor, double thetaCell) {
         double x;
         double y;
         double z;
 
         Coord3d[] points = new Coord3d[size * size];
-        Color[] colors = new Color[size * size];
-
-        double R = 5, r = 3;
         double phi, theta;
         int i = 0;
-        for (phi = 0; phi < 2 * PI; phi += 2 * PI / size) {
-            for (theta = -PI; theta < PI; theta += 2 * PI / size) {
+        for (phi = phiFloor; phi < phiCell; phi += phiCell / size) {
+            for (theta = thetaFloor; theta < thetaCell; theta += abs(thetaFloor) + abs(thetaCell) / size) {
                 x = (R + r * cos(phi)) * cos(theta);
                 y = (R + r * cos(phi)) * sin(theta);
                 z = r * sin(phi);
-                points[i] = new Coord3d(x, y, z);
-                colors[i] = new Color((float) (1 - (phi / 2 * PI)), 0, 1, 0.15f);
-                i++;
+                points[i++] = new Coord3d(x, y, z);
             }
         }
-        Scatter scatter = new Scatter(points, colors);
-        chart = AWTChartComponentFactory.chart(Quality.Advanced, "newt");
-        chart.getScene().add(scatter);
+        return points;
     }
 }
