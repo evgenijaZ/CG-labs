@@ -19,27 +19,28 @@ public class Torus extends AbstractAnalysis {
 
     @Override
     public void init() {
-        Coord3d[] points = getCoordinates(5, 3, 500, 0, 2 * PI, -PI, PI);
+        Coord3d[] points = getCoordinates(5, 3, 500, 0, 0, -PI, PI);
         Scatter scatter = new Scatter(points, Color.BLUE);
         chart = AWTChartComponentFactory.chart(Quality.Advanced, "newt");
         chart.getScene().add(scatter);
     }
 
-    Coord3d[] getCoordinates(double R, double r, int size, int phiFloor, double phiCell, double thetaFloor, double thetaCell) {
+    public static Coord3d[] getCoordinates(double R, double r, int size, int phiFloor, double phiCell, double thetaFloor, double thetaCell) {
         double x;
         double y;
         double z;
 
         Coord3d[] points = new Coord3d[size * size];
-        double phi, theta;
-        int i = 0;
-        for (phi = phiFloor; phi < phiCell; phi += phiCell / size) {
-            for (theta = thetaFloor; theta < thetaCell; theta += abs(thetaFloor) + abs(thetaCell) / size) {
+        double phi = phiFloor, theta = thetaFloor;
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
                 x = (R + r * cos(phi)) * cos(theta);
                 y = (R + r * cos(phi)) * sin(theta);
                 z = r * sin(phi);
-                points[i++] = new Coord3d(x, y, z);
+                points[size*i+j] = new Coord3d(x, y, z);
+                theta += (abs(thetaFloor) + abs(thetaCell)) / size;
             }
+            phi += (abs(phiFloor) + abs(phiCell)) / size;
         }
         return points;
     }
