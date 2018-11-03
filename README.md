@@ -15,4 +15,7 @@ Example:
 Build charts to torus ![torus equation](https://github.com/evgenijaZ/CG-labs/blob/docs/docs/torus_equation.gif)  
 Example:  
 ![Charts](https://github.com/evgenijaZ/CG-labs/blob/docs/docs/lab4.JPG)  
+## [Lab 5](https://github.com/evgenijaZ/CG-labs/tree/master/src/main/java/edu/kpi/cg/lab5)  
+Animation  
+(https://github.com/evgenijaZ/CG-labs/blob/docs/docs/lab5-1.JPG)    
  
