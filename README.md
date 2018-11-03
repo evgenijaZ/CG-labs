@@ -17,5 +17,5 @@ Example:
 ![Charts](https://github.com/evgenijaZ/CG-labs/blob/docs/docs/lab4.JPG)  
 ## [Lab 5](https://github.com/evgenijaZ/CG-labs/tree/master/src/main/java/edu/kpi/cg/lab5)  
 Animation  
-(https://github.com/evgenijaZ/CG-labs/blob/docs/docs/lab5-1.JPG)    
+![Animation](https://github.com/evgenijaZ/CG-labs/blob/master/docs/lab5-2.JPG)    
  
